@@ -32,6 +32,9 @@ fn tensorfun() -> Result<(), Box<dyn std::error::Error>> {
     let nested_tensor = Tensor::new(&nested_data, &Device::Cpu)?;
     println!("nested_tensor: {:?}", nested_tensor.to_vec2::<f32>()?);
 
+    let t5 = nested_tensor.rand_like(0.0, 1.0)?;
+    println!("nested_tensor: {:?}", t5.to_vec2::<f32>()?);
+
 
     Ok(())
 
